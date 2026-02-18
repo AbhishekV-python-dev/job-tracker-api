@@ -1,0 +1,11 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+instance/
+node_modules/
+frontend/dist/
+frontend/node_modules/
+.pytest_cache/
+seed.py
+verify.py

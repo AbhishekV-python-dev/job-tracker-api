@@ -12,5 +12,7 @@ ENV FLASK_APP=run.py
 
 EXPOSE 5000
 
-CMD ["gunicorn", "-b", "0.0.0.0:5000", "run:app"]
+COPY start.sh .
+RUN chmod +x start.sh
 
+CMD ["./start.sh"]

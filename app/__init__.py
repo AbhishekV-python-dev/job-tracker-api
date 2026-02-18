@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_cors import CORS
 from app.config import DevelopmentConfig
 from app.extensions import db, migrate, jwt
 from app.routes.health import health_bp
@@ -13,6 +14,8 @@ import logging
 def create_app(config_class=DevelopmentConfig):
     app = Flask(__name__)
     app.config.from_object(config_class)
+
+    CORS(app)
 
     db.init_app(app)
     migrate.init_app(app, db)
